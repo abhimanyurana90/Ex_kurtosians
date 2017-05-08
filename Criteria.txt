@@ -1,3 +1,0 @@
-a.	If <DocType> is CORRESPONDENCE and first 2 digits of GRReferenceID  are  44 or above but  not 69. - Then create an xml with this record for Team -A
-or
-b.	If <DocType> is APPLICATION  and  <PartNo> is 230F-UHA-1216 then the whole control file goes to 2.0  - Then create an xml with this record for Team -B
