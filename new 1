@@ -1,0 +1,25 @@
+(StringHandling.LEFT(row3.POLICY ,9)).matches("^[0-9]+$")?
+((Integer.parseInt(StringHandling.LEFT(row3.POLICY ,2))<44 ||
+Integer.parseInt(StringHandling.LEFT(row3.POLICY ,2))==69)
+&&
+row3.PREMIUM_AMT.matches("[0-9]+$") &&
+row3.INTEREST_AMT.matches("[0-9]+$") &&
+row3.CHECK_AMT.matches("[0-9]+$")):false
+
+
+
+
+(StringHandling.LEFT(row3.POLICY ,9)).matches("^[0-9]+$")?
+((Integer.parseInt(StringHandling.LEFT(row3.POLICY ,2))>=44 &&
+Integer.parseInt(StringHandling.LEFT(row3.POLICY ,2))!=69)
+&&
+row3.PREMIUM_AMT.matches("[0-9]+$") &&
+row3.INTEREST_AMT.matches("[0-9]+$") &&
+row3.CHECK_AMT.matches("[0-9]+$")?true:false):false
+
+
+
+!row3.PREMIUM_AMT.matches("[0-9]+$") ||
+!row3.INTEREST_AMT.matches("[0-9]+$") ||
+!row3.CHECK_AMT.matches("[0-9]+$") ||
+!(StringHandling.LEFT(row3.POLICY ,9)).matches("^[0-9]+$")
