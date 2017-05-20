@@ -1,9 +1,0 @@
-
-context.currdate=StringHandling.LEFT(TalendDate.formatDate("YYMMdd",TalendDate.getCurrentDate()),6) ;
-
-context.currtime=TalendDate.formatDate("HHmm",TalendDate.getCurrentDate());
-
-
-context.FileHeader=input_row.RecordType+input_row.content.substring(0, 22)+ context.currdate+context.currtime+input_row.content.substring(32, StringHandling.LEN(input_row.content));
-
-//System.out.println(context.FileHeader);
