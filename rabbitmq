@@ -1,0 +1,38 @@
+ConnectionFactory RabbitMQConFactory = new ConnectionFactory();
+factory.setUsername(uhomqdev);
+factory.setPassword(8TukjA3F5mqW8bHR);
+factory.setVirtualHost(uho_rabbit_dev);
+factory.setHost(apsrd8273);
+factory.setPort(5672);
+Connection RabbitMQConnection = RabbitMQConFactory.newConnection();
+
+
+
+Channel RabbitMQChannel = conn.createChannel();
+byte[] messageBodyBytes = "Hello, world!".getBytes();
+
+RabbitMQChannel.queueDeclare(SampleQueue, false, false, false, null);
+
+RabbitMQChannel.basicPublish("", QUEUE_NAME, null, messageBodyBytes);
+System.out.println(" [x] Sent '" + message + "'");
+
+
+RabbitMQChannel.close();
+RabbitMQConnection.close();
+
+
+//byte[] messageBodyBytes = "Hello, world!".getBytes();
+//channel.basicPublish(exchangeName, routingKey, null, messageBodyBytes);
+
+//ConnectionFactory factory = new ConnectionFactory();
+//factory.setUri("amqp://userName:password@hostName:portNumber/virtualHost");
+//Connection conn = factory.newConnection();
+
+
+
+
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.Channel;
+
+https://www.rabbitmq.com/tutorials/tutorial-one-java.html
+
